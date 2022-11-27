@@ -1,0 +1,8 @@
+# Ignore everything
+/*
+
+# except...
+!Fedora/
+!nvim/
+!shell/
+!.gitignore
