@@ -14,7 +14,7 @@
 
 -- Faster startups
 --
--- require('impatient')
+require('impatient')
 vim.g.did_load_filetypes = 1
 
 
@@ -29,8 +29,8 @@ require("user.plugins")
 
 -- Colorscheme
 --
-vim.cmd [[colorscheme habamax]] -- Temporary purposes
--- require("user.colorscheme")
+require("user.colorscheme")
+-- vim.cmd [[colorscheme habamax]] -- Temporary purposes
 
 
 

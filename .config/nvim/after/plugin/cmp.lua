@@ -11,9 +11,12 @@ if not kind_status_ok then
   return
 end
 
-local snippets_folder = vim.fn.stdpath "config" .. "/lua/user/snippets/"
+-- Snippets folder
+-- local snippets_folder = vim.fn.stdpath "config" .. "/lua/user/snippets/"
+-- require("luasnip.loaders.from_snipmate").lazy_load({ paths = snippets_folder })
+
+-- Plugin built-ins
 require("luasnip/loaders/from_vscode").lazy_load()
-require("luasnip.loaders.from_snipmate").lazy_load({ paths = snippets_folder })
 
 -- local check_backspace = function()
 --   local col = vim.fn.col "." - 1

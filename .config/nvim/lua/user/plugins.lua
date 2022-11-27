@@ -95,6 +95,8 @@ return packer.startup(function(use)
       require("lazyload.nvim-tree")
     end
   }
+  use "nvim-pack/nvim-spectre" -- Search and replace
+
   use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
 
   --  __    ___  ____
@@ -142,8 +144,15 @@ return packer.startup(function(use)
       -- "honza/vim-snippets", -- Collection of snippets to use
 
       -- Pairs () [] {}
-      "windwp/nvim-autopairs",
       "abecodes/tabout.nvim",
+      "windwp/nvim-autopairs",
+      { "windwp/nvim-ts-autotag",
+        -- Automatic Tag Completion
+        ft = { 'html', 'javascript', 'typescript',
+          'javascriptreact', 'typescriptreact',
+          'vue', 'tsx', 'jsx', 'xml', 'php'
+        }
+      }
     },
   }
 
@@ -170,22 +179,18 @@ return packer.startup(function(use)
   use "folke/trouble.nvim"
   use "rcarriga/nvim-notify"
   use "moll/vim-bbye" -- Bdelete implementation
+  use "andymass/vim-matchup"
   -- use "goolord/alpha-nvim"
   -- use "karb94/neoscroll.nvim"
   -- use "filipdutescu/renamer.nvim"
   -- use 'michaelb/sniprun'
   -- use "mizlan/iswap.nvim"
   -- use "hoschi/yode-nvim"
-  -- use "andymass/vim-matchup"
   -- use "lukas-reineke/indent-blankline.nvim"
   -- use "danymat/neogen"
   -- use "phaazon/hop.nvim"
   -- use "windwp/nvim-spectre"
 
-  -- use { ,
-  --   requires = "nvim-treesitter/nvim-treesitter",
-  --   cmd =
-  -- }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

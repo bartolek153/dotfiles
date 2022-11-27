@@ -11,8 +11,6 @@ ts.setup {
     "lua",
     "c",
     "c_sharp",
-    "latex",
-    "bibtex",
   },
 
   -- ensure_installed = "all",
@@ -40,6 +38,10 @@ ts.setup {
   },
 
   autopairs = {
+    enable = true,
+  },
+
+  autotag = {
     enable = true,
   },
 

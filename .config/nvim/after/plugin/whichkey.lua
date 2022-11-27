@@ -254,6 +254,7 @@ local mappings = {
       t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
       x = { "<cmd>SnipTerminate<cr>", "Terminate" },
     },
+    s = { "<cmd>lua require('spectre').open_file_search()<CR>", "Spectre Menu" },
     t = {
       name = "Tab Actions",
       e = { "<cmd>:tabedit<CR>", ":tabedit" }
