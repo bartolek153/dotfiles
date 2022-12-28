@@ -27,8 +27,6 @@ local keymap = vim.api.nvim_set_keymap
 local noremap = { noremap = true, silent = true }
 -- local map = { noremap = false, silent = false }
 
-keymap("n", "tt", ":NvimTreeToggle<CR>", noremap)
-
 -- Remap <Space> to null (<Nop>) in all modes but INSERT
 keymap("", "<Space>", "<Nop>", noremap) -- same as 'noremap <Space> <Nop>'
 
@@ -67,20 +65,23 @@ keymap('n', '<S-Tab>', 'gT', noremap)
 -- Navigate buffers
 keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", noremap)
 keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", noremap)
+keymap("n", "<C-w>", ":Bdelete<CR>", noremap)
 
 -- Increment / Decrement
 keymap("n", '+', '<C-a>', noremap)
 keymap("n", '-', '<C-x>', noremap)
 
 -- Delete a word backwards
-keymap("n", 'dw', 'vb"_d', noremap)
+-- keymap("n", 'dw', 'vb"_d', noremap)
 
 -- Select all
-keymap('v', '<c-a>', '<ESC>gg<S-v>G', noremap)
+keymap('n', '<c-a>', '<ESC>gg<S-v>G', noremap)
 
+keymap('n', '<a-n>', '<cmd>nohlsearch<cr>', noremap)
 
 
 -- INSERT --
+
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", noremap)
 
@@ -115,14 +116,15 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", noremap)
 
 
 -- CUSTOM --
-keymap("n", "<C-s>", "<cmd>vsplit<cr>", noremap)
-keymap("n", "<C-z>", "<cmd>ZenMode<cr>", noremap)
-keymap("i", "<C-F>", '<esc><cmd>:HopChar2<CR>', noremap)
-keymap("n", "<C-F>", '<esc><cmd>:HopChar2<CR>', noremap)
-keymap("n", "\\",
-  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<CR>",
-  noremap)
--- keymap("n", "qn", ":e ~/Notes/<cr>", noremap)
+--
+-- Save
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true })
+vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>li', { noremap = true })
+vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>', { noremap = true })
+
+
+
+
 
 
 

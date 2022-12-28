@@ -3,17 +3,39 @@ if not status_ok then
   return
 end
 
+
 local actions = require "telescope.actions"
+local fb_actions = require 'telescope'.extensions.file_browser.actions
+local previewers = require "telescope.previewers"
+local Job = require "plenary.job"
+
 
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
 
-local fb_actions = require 'telescope'.extensions.file_browser.actions
+
+vim.keymap.set("n", "<C-p>", function()
+  require("telescope.builtin").find_files(
+    require("telescope.themes").get_dropdown({previewer = false})
+  )
+end)
+
+vim.keymap.set("n", "\\", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h",
+    cwd = telescope_buffer_dir(),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 40 }
+  })
+end)
+
 
 -- Custom previewer to skip big files and binary files
-local previewers = require "telescope.previewers"
-local Job = require "plenary.job"
 local preview_maker = function(filepath, bufnr, opts)
   filepath = vim.fn.expand(filepath)
   Job
@@ -157,18 +179,6 @@ telescope.setup {
   },
 }
 
-vim.keymap.set("n", "ts", function()
-  telescope.extensions.file_browser.file_browser({
-    path = "%:p:h",
-    cwd = telescope_buffer_dir(),
-    respect_gitignore = false,
-    hidden = true,
-    grouped = true,
-    previewer = false,
-    initial_mode = "normal",
-    layout_config = { height = 40 }
-  })
-end)
 
 -- telescope.load_extension "ui-select"
 telescope.load_extension "file_browser"

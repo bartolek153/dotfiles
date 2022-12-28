@@ -1,4 +1,11 @@
-require('spectre').setup({
+local status_ok, spectre = pcall(require, "spectre")
+if not status_ok then
+  return
+end
+
+vim.cmd[[nnoremap <C-f> :Spectre<cr>]]
+
+spectre.setup({
 
   color_devicons = true,
   open_cmd = 'vnew',

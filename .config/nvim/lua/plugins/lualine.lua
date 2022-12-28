@@ -184,4 +184,4 @@ lualine.setup({
         lualine_z = {},
     },
       tabline = {},
-    extensions = { help_custom, telescope, "toggleterm", "nvim-tree", "symbols-outline", "man", "aerial", }, })
+    extensions = { help_custom, telescope, "toggleterm", "neo-tree", "symbols-outline", "man", "aerial", }, })

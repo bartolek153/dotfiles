@@ -6,31 +6,34 @@ end
 ts.setup {
 
   -- A list of parser names, or "all"
-  ensure_installed = {
-    "python",
-    "lua",
-    "c",
-    "c_sharp",
-  },
-
-  -- ensure_installed = "all",
+--  ensure_installed = {
+--    "python",
+--    "lua",
+--    "c",
+--    "c_sharp",
+--  },
 
   -- install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
   -- Automatically install missing parsers when entering buffer
-  auto_install = false,
+  auto_install = true,
 
   -- List of parsers to ignore installing (for 'all')
   -- ignore_install = { "markdown", "markdown_inline" },
 
   highlight = {
     enable = true, -- false will disable the whole extension
-    disable = {}, -- list of language that will be disabled
-    additional_vim_regex_highlighting = false
+
+    disable = function(lang, buf)
+      local max_filesize = 100 * 1024 -- 100 KB
+      local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+      if ok and stats and stats.size > max_filesize then
+          return true
+      end
+    end,
   },
-
-
+  
 
   indent = {
     enable = true,
@@ -43,6 +46,10 @@ ts.setup {
 
   autotag = {
     enable = true,
+    skip_tags = {
+      'area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img', 'slot',
+      'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr','menuitem'
+    }
   },
 
   matchup = {
@@ -51,7 +58,7 @@ ts.setup {
   },
 
   playground = {
-    enable = true,
+    enable = false,
     disable = {},
     updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
     persist_queries = false, -- Whether the query persists across vim sessions

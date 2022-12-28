@@ -136,12 +136,12 @@ zinit light-mode for \
 zinit for \
   light-mode \
     zdharma-continuum/history-search-multi-word \
-    MichaelAquilina/zsh-auto-notify \
     zsh-users/zsh-autosuggestions \
     zsh-users/zsh-completions \
     zsh-users/zsh-syntax-highlighting
     # zdharma-continuum/fast-syntax-highlighting \
     # MichaelAquilina/zsh-you-should-use \
+    # MichaelAquilina/zsh-auto-notify \
     # agkozak/zsh-z \
 
 # Oh My Zsh Plugins
@@ -172,9 +172,11 @@ alias hs='history | less'
 
 
 ## Shell Commands
-alias ll="exa --long --all --header --icons --sort='type'"
+alias ls="exa --icons --color=always --group-directories-first"
+alias la="exa --long --all --header --icons --sort='type'"
 alias cls='clear'
 alias ...='cd ../..'
+alias j='jump'
 # alias rm="trash"
 
 

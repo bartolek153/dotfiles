@@ -53,6 +53,9 @@ sudo dnf install neovim ripgrep sed fd-find xclip unzip
  # ZSH
 sudo dnf install zsh tmux exa bat ranger
 
+ # Docker
+sudo dnf install docker
+
  # Git-Related
 sudo dnf copr enable atim/lazygit -y
 
@@ -66,6 +69,9 @@ sudo dnf install dotnet
 
  # Python
 sudo dnf install python python-pip python-virtualenv
+
+ # NodeJS
+sudo dnf install nodejs
 
  # SQLite
 sudo dnf install sqlite

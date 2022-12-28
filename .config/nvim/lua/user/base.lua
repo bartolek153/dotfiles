@@ -75,6 +75,7 @@ vim.opt.virtualedit = "none" -- Cursor can be positioned where there is no actua
 ---- UI -----
 -------------
 
+vim.opt.termguicolors = true
 
 -- Blend
 vim.opt.winblend = 0
@@ -84,7 +85,7 @@ vim.opt.pumblend = 5
 vim.opt.cmdheight = 1 -- Number of screen lines to use for the command-line
 
 -- Completion Menu
-vim.opt.completeopt = { "menu", "menuone", "noselect" } -- Completion options
+vim.opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
 vim.opt.pumheight = 10 -- Maximum number of items to show in the popup menu
 
 -- Fold (:h usr_28.txt)
