@@ -136,12 +136,12 @@ zinit light-mode for \
 zinit for \
   light-mode \
     zdharma-continuum/history-search-multi-word \
-    MichaelAquilina/zsh-auto-notify \
     zsh-users/zsh-autosuggestions \
     zsh-users/zsh-completions \
     zsh-users/zsh-syntax-highlighting
     # zdharma-continuum/fast-syntax-highlighting \
     # MichaelAquilina/zsh-you-should-use \
+    # MichaelAquilina/zsh-auto-notify \
     # agkozak/zsh-z \
 
 # Oh My Zsh Plugins
