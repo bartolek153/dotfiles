@@ -166,6 +166,10 @@ zinit light romkatv/powerlevel10k
 #                     #
 #######################
 
+# Tuneclip
+alias playlist="~/Music/.play.sh"
+
+
 ## Files
 alias zshconfig="nvim ~/.config/zsh/.zshrc"
 alias hs='history | less'
@@ -188,7 +192,7 @@ alias update='sudo dnf upgrade'
 # alias sai='sudo apt install'
 # alias sps='sudo pacman -S'
 alias sdi='sudo dnf install'
-
+alias sds='dnf search'
 
 ## System Infos
 alias myip="curl http://ipecho.net/plain; echo"

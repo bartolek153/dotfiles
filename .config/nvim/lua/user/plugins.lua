@@ -26,7 +26,6 @@ end
 
 local plugins = {
 
-
   --   ____  ____  ____  ____  _  _  ____  ____  _  _  ___  ____  ____  ___
   --  (  _ \( ___)(  _ \( ___)( \( )(  _ \( ___)( \( )/ __)(_  _)( ___)/ __)
   --   )(_) ))__)  )___/ )__)  )  (  )(_) ))__)  )  (( (__  _)(_  )__) \__ \
@@ -212,6 +211,13 @@ local plugins = {
   -- Insert {} [] () at some selection
   { "kylechui/nvim-surround",  config = true,                                     event = "VeryLazy" },
 
+  -- Http requests
+  -- {
+  --   "aquach/vim-http-client",
+  --   config = function() require("rest-nvim").setup() end,
+  --   -- cmd = { "RestNvim" }
+  -- },
+
 
   --     ___  __  ____
   --    / __)(  )(_  _)
@@ -300,14 +306,14 @@ local plugins = {
   { "dstein64/vim-startuptime", cmd = "StartupTime" },
 
   -- Highlight matching characters
-  { "andymass/vim-matchup",
-    config = function()
-      vim.cmd [[hi! link MatchParen CursorLineNr ]]
-    end,
-    event = "VeryLazy"
-  },
+  -- {
+  --   "andymass/vim-matchup",
+  --   config = function()
+  --     vim.cmd [[hi! link MatchParen CursorLineNr ]]
+  --   end,
+  -- },
 
-  { "mizlan/iswap.nvim", event = "VeryLazy" },
+  { "mizlan/iswap.nvim",        event = "VeryLazy" },
 
   {
     "folke/which-key.nvim",

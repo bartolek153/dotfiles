@@ -14,7 +14,7 @@ local lsp_formatting = function(bufnr)
   })
 end
 
-vim.api.nvim_create_user_command('DisableLspFormatting',
+vim.api.nvim_create_user_command('DisableFormatOnSave',
   function()
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = 0 })
   end,
@@ -32,6 +32,8 @@ local with_diagnostics_code = function(builtin)
   }
 end
 
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 
 
@@ -41,8 +43,15 @@ null_ls.setup {
   sources = {
     -- .py
     -- with_diagnostics_code(null_ls.builtins.diagnostics.pylint), -- pip install pylint
-    null_ls.builtins.formatting.isort, -- pip install isort
-    null_ls.builtins.formatting.black, -- pip install black
+    -- formatting.isort, -- pip install isort
+    formatting.black, -- pip install black
+
+    -- .js
+    -- formatting.prettierd,
+    -- with_diagnostics_code(diagnostics.eslint_d)
+
+    -- .json
+    formatting.fixjson,
   },
 
   on_attach = function(client, bufnr)

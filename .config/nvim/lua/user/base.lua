@@ -102,6 +102,7 @@ vim.opt.cursorline = true -- Highlight the current line
 vim.opt.scrolloff = 8 -- Minimal number of screen lines to keep above and below the cursor
 vim.opt.sidescrolloff = 8 -- Minimal number of screen columns to keep to the left and to the right of the cursor
 -- vim.opt.ruler = false -- Line and Column count when there is no statusline
+vim.opt.colorcolumn = "80"
 
 -- Mode
 vim.opt.showmode = false -- If in Insert, Replace or Visual mode put a message on the last line
@@ -138,10 +139,8 @@ vim.cmd [[
 set iskeyword+=- "'abcd-edfg' is just one word
 filetype plugin on "load the plugin file for the file type, if any
 filetype indent on "load the indent file for the file type, if any
-"let &t_Cs = "\e[4:3m" 
-"let &t_Ce = "\e[4:0m" 
-set formatoptions-=o
-set formatoptions+=r
+"let &t_Cs = "\e[4:3m"
+"let &t_Ce = "\e[4:0m"
 ]]
 
 
@@ -163,7 +162,7 @@ let g:large_file = 10485760 " 10MB
 "   bufhidden=unload (save memory when other file is viewed)
 "   buftype=nowritefile (is read-only)
 "   undolevels=-1 (no undo possible)
- 
+
     au BufReadPre *
     \ let f=expand("<afile>") |
     \ if getfsize(f) > g:large_file |
@@ -179,8 +178,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "startuptime" },
   callback = function()
     vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR> 
-      set nobuflisted 
+      nnoremap <silent> <buffer> q :close<CR>
+      set nobuflisted
     ]]
   end,
 })

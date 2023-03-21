@@ -24,5 +24,6 @@ vim.keymap.set('n', 'gf', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 vim.keymap.set('n', 'gca', '<Cmd>Lspsaga code_action<CR>', opts)
 vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
+vim.keymap.set('n', 'gd', '<Cmd>Lspsaga goto_definition<CR>', opts)
 
 vim.keymap.set('n', 'gl', "<Cmd>Lspsaga show_line_diagnostics<CR>", opts)

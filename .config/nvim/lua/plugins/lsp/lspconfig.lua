@@ -114,6 +114,7 @@ nvim_lsp.pyright.setup {
 }
 
 nvim_lsp.omnisharp.setup {
+  cmd = { "dotnet", "/home/bartolek/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll" },
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
@@ -121,6 +122,30 @@ nvim_lsp.omnisharp.setup {
   end
 }
 
+-- nvim_lsp.eslint.setup({
+--   capabilities = capabilities,
+--   on_attach = function(client, bufnr)
+--     on_attach(client, bufnr)
+--     vim.api.nvim_create_autocmd("BufWritePre", {
+--       buffer = bufnr,
+--       command = "EslintFixAll",
+--     })
+--   end,
+-- })
+
+nvim_lsp.tsserver.setup {
+  on_attach = on_attach,
+  -- filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  cmd = { "typescript-language-server", "--stdio" },
+  capabilities = capabilities
+}
+
+-- nvim_lsp.flow.setup {
+--   on_attach = on_attach,
+--   filetypes = { "javascript", "javascriptreact", "javascript.jsx" },
+--   cmd = { "npx", "--no-install", "flow", "lsp" },
+--   capabilities = capabilities,
+-- }
 
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -130,6 +155,14 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   virtual_text = { spacing = 4, prefix = "●" },
   severity_sort = true,
 })
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded",
+})
+
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+--   border = "rounded",
+-- })
 
 
 -- Diagnostic symbols in the sign column (gutter)
