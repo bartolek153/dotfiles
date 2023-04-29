@@ -67,6 +67,12 @@ sudo dnf config-manager \
 
 sudo dnf install docker docker-compose-plugin
 
+ # VSCode
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+
+sudo dnf install code
+
  # Git-Related
 sudo dnf copr enable atim/lazygit -y
 
@@ -79,11 +85,14 @@ sudo dnf install lazygit gh
  # Dotnet CLI
 sudo dnf install dotnet
 
- # Python
-sudo dnf install python python-pip python-virtualenv
+ # Java
+sudo dnf install java-latest-openjdk.x86_64  # not sure
 
  # NodeJS
 sudo dnf install nodejs
+
+ # Python
+sudo dnf install python python-pip python-virtualenv
 
  # SQLite
 sudo dnf install sqlite
@@ -113,7 +122,7 @@ sudo dnf install gnome-extensions-app gnome-tweaks
 ## Extras
 
 ```bash
-sudo dnf install asciiquarium btop cowsay cmatrix cava ffmpeg figlet htop ncdu ncmpcpp neofetch qalculate sl toilet tree youtube-dlp vifm
+sudo dnf install asciiquarium btop cowsay cmatrix cava ffmpeg figlet htop ncdu ncmpcpp neofetch qalculate qbittorrent sl toilet tree youtube-dlp vifm
 ```
 
 ## Flatpaks

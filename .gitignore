@@ -25,12 +25,14 @@
 !.config/zsh
 .config/zsh/.zcompdump
 .config/zsh/.zhistory
+.config/zsh/.zsh_history
 
 !.config/tmux
 
 !.config/nvim
 .config/nvim/backup
 .config/nvim/plugin
+.config/nvim/lazy-lock.json
 
 !.config/cava
 !.config/musikcube/hotkeys.json
