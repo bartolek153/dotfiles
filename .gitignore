@@ -5,7 +5,7 @@
 
 
 !.gitignore
-# !.gitconfig
+!.gitconfig
 !README.md
 !.zshenv
 !setup.sh
