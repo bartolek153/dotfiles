@@ -8,9 +8,6 @@
 	email = luizekbartolassi@gmail.com
 	name = Luiz Eduardo Bartolassi
 
-[credential "https://gitlab.com"]
-	helper = !/usr/bin/glab auth git-credential
-
 [alias]
   logs = log --oneline --all --graph
   st = status
