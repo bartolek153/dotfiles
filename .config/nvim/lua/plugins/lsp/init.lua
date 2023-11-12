@@ -2,7 +2,7 @@ local import = function(file)
   require("plugins.lsp." .. file)
 end
 
-require "fidget".setup()
+-- require "fidget".setup()
 
 import("lspconfig")
 import("mason")

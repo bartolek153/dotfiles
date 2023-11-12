@@ -244,14 +244,14 @@ local plugins = {
     end,
 
     dependencies = {
-      "hrsh7th/cmp-buffer", -- Buffer completions source
-      "hrsh7th/cmp-path", -- Path completions source
-      "hrsh7th/cmp-nvim-lsp", -- LSP completions source
-      "saadparwaiz1/cmp_luasnip", -- Snippet completions source
+      "hrsh7th/cmp-buffer",           -- Buffer completions source
+      "hrsh7th/cmp-path",             -- Path completions source
+      "hrsh7th/cmp-nvim-lsp",         -- LSP completions source
+      "saadparwaiz1/cmp_luasnip",     -- Snippet completions source
 
-      "onsails/lspkind.nvim", -- vscode-like pictograms
+      "onsails/lspkind.nvim",         -- vscode-like pictograms
 
-      "L3MON4D3/LuaSnip", -- Snippet Engine
+      "L3MON4D3/LuaSnip",             -- Snippet Engine
       "rafamadriz/friendly-snippets", -- Colletion of snippets to use
       -- "honza/vim-snippets", -- Collection of snippets to use
 
@@ -278,13 +278,13 @@ local plugins = {
     "neovim/nvim-lspconfig", -- Language Server Engine (built-in)
 
     dependencies = {
-      "williamboman/mason.nvim", -- All-kind of tools installer
+      "williamboman/mason.nvim",           -- All-kind of tools installer
       "williamboman/mason-lspconfig.nvim", -- extension for mason.nvim
-      "jose-elias-alvarez/null-ls.nvim", -- Language Server Formatter
-      "glepnir/lspsaga.nvim", -- Lsp UIs
-      "ray-x/lsp_signature.nvim", -- Signature Help Provider
-      "j-hui/fidget.nvim", -- LSP Progress Show
-      "folke/trouble.nvim", -- diagnostics window
+      "jose-elias-alvarez/null-ls.nvim",   -- Language Server Formatter
+      "glepnir/lspsaga.nvim",              -- Lsp UIs
+      "ray-x/lsp_signature.nvim",          -- Signature Help Provider
+      -- "j-hui/fidget.nvim", -- LSP Progress Show
+      "folke/trouble.nvim",                -- diagnostics window
       -- "RRethy/vim-illuminate", -- Document Highlight
     },
     config = function()
