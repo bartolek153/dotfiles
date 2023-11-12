@@ -16,3 +16,7 @@ sh setup.sh
 ```
 
 ![nvim_demostration](.config/nvim/screenshot.png)
+
+---
+
+![general_demo](.config/general.png)

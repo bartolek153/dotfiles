@@ -22,6 +22,8 @@
 !.config
 .config/*
 
+!.config/general.png
+
 !.config/zsh
 .config/zsh/.zcompdump
 .config/zsh/.zhistory
