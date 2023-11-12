@@ -33,4 +33,5 @@
 !.config/nvim/.git/
 
 !.config/cava
-!.config/musikcube/hotkeys.json
+
+!.config/foot/
