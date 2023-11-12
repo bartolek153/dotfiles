@@ -3,8 +3,9 @@
 Public dotfiles for:
   * Tmux
   * Neovim
-  * Zsh
+  * ZSH
   * Cava
+  * Foot Terminal
 
 ## Importing Files...
 
