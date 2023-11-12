@@ -12,7 +12,7 @@
 
 
 
-# ...Packages helper
+# ...my packages install helper
 !Fedora/
 !Arch/
 
@@ -30,9 +30,7 @@
 !.config/tmux
 
 !.config/nvim
-.config/nvim/backup
-.config/nvim/plugin
-.config/nvim/lazy-lock.json
+!.config/nvim/.git/
 
 !.config/cava
 !.config/musikcube/hotkeys.json
