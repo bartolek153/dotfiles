@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +25,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -60,6 +60,31 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function()
+      local conf = require "plugins.configs.telescope"
+      local actions = require "telescope.actions"
+      conf.defaults.mappings.i = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<Esc>"] = actions.close,
+      }
+
+      return conf
+    end,
+  },
+
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require('neoscroll').setup({
+        mappings = { "<C-d>", "<C-u>", "zt", "zz", "zb", "<PageUp>", "<PageDown>" },
+      })
+    end,
+    event = "VeryLazy"
+  },
 }
 
 return plugins

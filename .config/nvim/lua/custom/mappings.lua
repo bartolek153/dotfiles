@@ -22,4 +22,11 @@ M.nvimtree = {
   },
 }
 
+M.telescope = {
+  n = {
+    ["<C-p>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
+  }
+}
+
+
 return M
