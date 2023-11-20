@@ -15,4 +15,3 @@ end
 
 -- lspconfig.pyright.setup { blabla}
 
-lspconfig.clangd.setup {filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }}
