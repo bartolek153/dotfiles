@@ -170,6 +170,9 @@ zinit light romkatv/powerlevel10k
 alias playlist="~/Music/.play.sh"
 
 
+# copy last command 
+alias clc="fc -ln -1 | xsel --clipboard"
+
 ## Files
 alias zshconfig="nvim ~/.config/zsh/.zshrc"
 alias hs='history | less'
@@ -187,7 +190,7 @@ alias j='jump'
 ## Package Manager
 # alias update='sudo apt-get update && sudo apt-get upgrade'
 # alias update='sudo pacman -Syu'
-alias update='sudo dnf upgrade'
+alias update='sudo dnf update'
 
 # alias sai='sudo apt install'
 # alias sps='sudo pacman -S'
