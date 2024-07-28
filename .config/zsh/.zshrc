@@ -13,6 +13,8 @@ fi
 #                     #
 #######################
 
+export PATH="$HOME/.local/bin:$PATH"
+
 unsetopt beep
 setopt autocd
 setopt automenu

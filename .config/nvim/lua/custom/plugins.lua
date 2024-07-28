@@ -76,15 +76,15 @@ local plugins = {
     end,
   },
 
-  {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require('neoscroll').setup({
-        mappings = { "<C-d>", "<C-u>", "zt", "zz", "zb", "<PageUp>", "<PageDown>" },
-      })
-    end,
-    event = "VeryLazy"
-  },
+  -- {
+  --   "karb94/neoscroll.nvim",
+  --   config = function()
+  --     require('neoscroll').setup({
+  --       mappings = { "<C-d>", "<C-u>", "zt", "zz", "zb", "<PageUp>", "<PageDown>" },
+  --     })
+  --   end,
+  --   event = "VeryLazy"
+  -- },
 }
 
 return plugins
